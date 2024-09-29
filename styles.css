@@ -2,3 +2,21 @@ body{
     background-image: url(pexels-pixabay-209831.jpg);
     background-size: cover;
 }
+
+a{
+    color: cyan;
+}
+
+.app{
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px 5px rgb(6, 6, 6, 0.3);
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
