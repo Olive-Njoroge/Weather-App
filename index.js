@@ -9,9 +9,16 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", cityElement);
 
 function searchCity(city){
-    console.log(apiUrl);
+let apiKey = "db36a36a2f66f8114f09od05493b24tc";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+axios.get(apiUrl).then(fetchWeather);
+}
+
+function fetchWeather(response){
+    let temperatureValue = document.querySelector("#temperature-value");
+    let temperature = Math.round(response.data.temperature.current);
+    temperatureValue.innerHTML = temperature;
 
 }
 
-let apiKey = "7243b2ee32b4208bfd7a98f70e8955de";
-let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+
