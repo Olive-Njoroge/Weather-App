@@ -17,15 +17,30 @@ axios.get(apiUrl).then(fetchWeather);
 function fetchWeather(response){
     let temperatureValue = document.querySelector("#temperature-value");
     let temperature = Math.round(response.data.temperature.current);
-    temperatureValue.innerHTML = temperature;
     let descriptionElement = document.querySelector("#description");
-    descriptionElement.innerHTML = response.data.condition.description;
     let humidity = document.querySelector("#humidity");
-    humidity.innerHTML = `${response.data.temperature.humidity}%`;
     let wind = document.querySelector("#wind");
-    wind.innerHTML = response.data.wind.speed;
-   
+    let time = document.querySelector("#time");
+    let date = new Date(response.data.time * 1000);
 
+    time.innerHTML =formatDate(date);
+    temperatureValue.innerHTML = temperature;
+    descriptionElement.innerHTML = response.data.condition.description;
+    humidity.innerHTML = `${response.data.temperature.humidity}%`;
+    wind.innerHTML = `${response.data.wind.speed}km/h`;
+}
+
+function formatDate(date){
+    let day = date.getDay();
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    day = days[date.getDay()];
+    if(minutes<10){
+        minutes = `0${minutes}`;
+    }
+    return `${day} ${hour}:${minutes}`;
 }
 
 
