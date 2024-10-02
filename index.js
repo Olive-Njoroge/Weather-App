@@ -18,6 +18,8 @@ function fetchWeather(response){
     let temperatureValue = document.querySelector("#temperature-value");
     let temperature = Math.round(response.data.temperature.current);
     temperatureValue.innerHTML = temperature;
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = response.data.condition.description;
 
 }
 
