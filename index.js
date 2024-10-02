@@ -22,6 +22,8 @@ function fetchWeather(response){
     descriptionElement.innerHTML = response.data.condition.description;
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = response.data.temperature.humidity;
+    let wind = document.querySelector("#wind");
+    wind.innerHTML = response.data.wind.speed;
    
 
 }
