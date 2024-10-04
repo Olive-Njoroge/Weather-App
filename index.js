@@ -22,7 +22,6 @@ function fetchWeather(response){
     let wind = document.querySelector("#wind");
     let time = document.querySelector("#time");
     let date = new Date(response.data.time * 1000);
-
     time.innerHTML =formatDate(date);
     temperatureValue.innerHTML = temperature;
     descriptionElement.innerHTML = response.data.condition.description;
