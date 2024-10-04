@@ -48,6 +48,8 @@ main{
     font-weight: bold;
     padding-top: 28px;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
 footer{
@@ -55,5 +57,11 @@ footer{
     border-top: 1px solid #2F4D57;
     padding-top: 5px;
     text-align: center;
+}
+
+#icon{
+    height: 5px;
+    width: 10px;
+
 }
 

@@ -16,7 +16,7 @@ axios.get(apiUrl).then(fetchWeather);
 
 function fetchWeather(response){
     let temperatureValue = document.querySelector("#temperature-value");
-    let temperature = Math.round(response.data.temperature.current);
+    let temperature = `${Math.round(response.data.temperature.current)}&degC`;
     let descriptionElement = document.querySelector("#description");
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#wind");
