@@ -27,6 +27,8 @@ function fetchWeather(response){
     descriptionElement.innerHTML = response.data.condition.description;
     humidity.innerHTML = `${response.data.temperature.humidity}%`;
     wind.innerHTML = `${response.data.wind.speed}km/h`;
+    let icon = document.querySelector("#icon");
+    icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
 }
 
 function formatDate(date){
