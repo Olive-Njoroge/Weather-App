@@ -62,6 +62,19 @@ footer{
 #icon{
     height: 5px;
     width: 10px;
+}
 
+.weather{
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-day{
+    font-weight: lighter;
+    text-align: center;
+}
+
+.weather-icon{
+    text-align: center;
 }
 
