@@ -44,4 +44,21 @@ function formatDate(date){
     return `${day} ${hour}:${minutes}`;
 }
 
+function displayForecast(){
+    let forecast = document.querySelector(".weather");
+    let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
+    let forecastHtml = "";
+    days.forEach(function (day){
+        forecastHtml +=
+        `<div class="Tue">
+        <div class="weather-day">${day}</div>
+        <div class="weather-icon">⛅</div>
+        <div class="weather-temperature"><strong>29&deg</strong>  14&deg</div>
+        </div>`;
+    });
+
+    forecast.innerHTML = forecastHtml;
+}
+displayForecast();
+
 
