@@ -30,7 +30,7 @@ function fetchWeather(response){
     let icon = document.querySelector("#icon");
     icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
 
-    getForecast(response.data.city)
+    getForecast(response.data.city);
 }
 
 function formatDate(date){
@@ -46,32 +46,34 @@ function formatDate(date){
     return `${day} ${hour}:${minutes}`;
 }
 
+
+function getForecast(city){
+    let apiKey = "db36a36a2f66f8114f09od05493b24tc";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+    }
+
 function displayForecast(response){
+    
     let forecast = document.querySelector(".weather");
     let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
     let forecastHtml = "";
-    days.forEach(function (day){
-        forecastHtml +=
-        `<div class="Tue">
-        <div class="weather-day">${day}</div>
-        <div class="weather-icon">⛅</div>
-        <div class="weather-temperature"><strong>29&deg</strong>  14&deg</div>
-        </div>`;
+    response.data.daily.forEach(function (day, index) {
+        if (index < 5) {  // Limiting to 5 days
+            let date = new Date(day.time * 1000);
+            let dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+            forecastHtml += `
+                <div class="weather-day">
+                    <div class="weather-day-name">${dayName}</div>
+                    <div class="weather-icon"><img src="${day.condition.icon_url}" alt="Weather icon"></div>
+                    <div class="weather-temperature">
+                        <strong>${Math.round(day.temperature.maximum)}&deg;</strong> ${Math.round(day.temperature.minimum)}&deg;
+                    </div>
+                </div>`;
+        }
     });
 
     forecast.innerHTML = forecastHtml;
+    //displayForecast();
 }
-displayForecast();
-
-
-function getForecast(city){
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-    let apiKey = "db36a36a2f66f8114f09od05493b24tc";
-    axios.get(apiUrl).then(displayForecast);
-
-}
-
-
-
-
 
