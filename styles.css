@@ -1,48 +1,52 @@
-body{
-    background-image: url(pexels-pixabay-209831.jpg);
+body {
+    background: linear-gradient(109.6deg, rgb(123, 90, 224) 11.2%, rgb(164, 46, 253) 32.6%, rgb(213, 56, 234) 62.7%, rgb(251, 138, 52) 100.2%);
     background-size: cover;
 }
 
-a{
+a {
     color: darkturquoise;
 }
 
-.app{
+.app {
     max-width: 600px;
     margin: 30px auto;
     padding: 6px;
     border-radius: 6px;
-    box-shadow: 5px 5px 5px 5px rgb(6, 6, 6, 0.3);
+    /*box-shadow: 5px 5px 5px 5px rgb(6, 6, 6, 0.3);*/
 }
 
 
-.search-form-input{
+.search-form-input {
     border-radius: 4px;
-    border: none;
+    border: padding-bottom: 5px;
     width: 80%;
     padding: 6px;
 }
 
-.search-form-button{
+.search-form-button {
     border-radius: 4px;
     border: none;
     padding: 6px;
-    width:15%;
+    width: 18%;
     background-color: darkturquoise;
 }
 
-form{
-    border-bottom: 1px solid #3a4a50;
-    padding-bottom: 5px;
+form {
+    /*border-bottom: 1px solid #3a4a50;*/
+    box-shadow: 5px 5px 5px 5px rgb(6, 6, 6, 0.3);
+    background-color: rgb(232, 97, 143, 0.0%);
+    border-radius: 3px;
+    
+
 }
 
-main{
+main {
     display: flex;
     justify-content: space-between;
 }
 
 
-.temperature-value{
+.temperature-value {
     font-size: 38px;
     width: 140px;
     font-weight: bold;
@@ -52,28 +56,28 @@ main{
     justify-content: space-between;
 }
 
-footer{
+footer {
     font-size: 10px;
     border-top: 1px solid #2F4D57;
     padding-top: 5px;
     text-align: center;
 }
 
-#icon{
-    height: 5px;
-    width: 10px;
+#icon {
+    font-size: 2.5rem;
+    
 }
 
-.weather{
+.weather {
     display: flex;
     justify-content: space-between;
 }
 
-.weather-day{
+.weather-day {
     font-weight: lighter;
     text-align: center;
 }
 
-.weather-icon{
+.weather-icon {
     text-align: center;
 }
